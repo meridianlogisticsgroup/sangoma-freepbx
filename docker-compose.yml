@@ -7,8 +7,14 @@ services:
     hostname: freepbx
     networks:
       - dokploy-network
-    ports:
-      - ":7443"
+  ports:
+    - "80:80"
+    - "443:443"
+    - "8089:8089"                 # ARI / UCP WebSocket
+    - "5060:5060/udp"
+    - "5061:5061/tcp"
+    - "10000-20000:10000-20000/udp"
+
 
 networks:
   dokploy-network:
