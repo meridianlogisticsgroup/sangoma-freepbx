@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+  freepbx:
+    image: yuhjyechang/freepbx-sangoma
+    init: true
+    restart: always
+    hostname: freepbx
+    networks:
+      dokploy-network:
+    ports:
+      - ":7443"
+
+networks:
+  dokploy-network:
+    external: true
